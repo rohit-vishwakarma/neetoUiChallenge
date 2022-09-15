@@ -13,7 +13,7 @@ const Note = ({ note, onClickEdit, onClickDelete }) => (
       onClickEdit={onClickEdit}
     />
     <Content description={note.description} />
-    <Footer />
+    <Footer note={note} />
   </Container>
 );
 
