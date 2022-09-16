@@ -42,7 +42,9 @@ const Contacts = () => {
           }}
         />
         <Table showDeleteAlert={() => handleShowDeleteAlert()} />
-        <Pagination count={50} navigate={() => {}} pageNo={3} pageSize={10} />
+        <div className="flex w-full flex-row justify-end">
+          <Pagination count={50} navigate={() => {}} pageNo={3} pageSize={10} />
+        </div>
         <Alert
           isOpen={showDeleteAlert}
           message="Are you sure you want to continue? This cannot be undone."
