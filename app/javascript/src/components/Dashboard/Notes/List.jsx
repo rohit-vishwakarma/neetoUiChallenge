@@ -23,7 +23,7 @@ const List = ({ notes, fetchNotes }) => {
 
   return (
     <>
-      <div>
+      <div className="flex w-full flex-col">
         {notes.map(note => (
           <Note
             key={note.id}
