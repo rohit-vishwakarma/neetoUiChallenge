@@ -11,7 +11,7 @@ const Menu = ({ showMenu }) => {
 
   return (
     <div className="flex">
-      <MenuBar showMenu={showMenu} title="Notes">
+      <MenuBar showMenu={showMenu} title="Contacts">
         {MenuBarBlocks.main.map(menuBarBlock => (
           <MenuBar.Block
             active={menuBarBlock.active}
@@ -41,13 +41,6 @@ const Menu = ({ showMenu }) => {
           collapse={isSearchCollapsed}
           onCollapse={() => setIsSearchCollapsed(true)}
         />
-        {MenuBarBlocks.segments.map(menuBarBlock => (
-          <MenuBar.Block
-            count={menuBarBlock.count}
-            key={menuBarBlock.label}
-            label={menuBarBlock.label}
-          />
-        ))}
         <MenuBar.SubTitle
           iconProps={[
             {
@@ -70,13 +63,6 @@ const Menu = ({ showMenu }) => {
             Tags
           </Typography>
         </MenuBar.SubTitle>
-        {MenuBarBlocks.tags.map(menuBarBlock => (
-          <MenuBar.Block
-            count={menuBarBlock.count}
-            key={menuBarBlock.label}
-            label={menuBarBlock.label}
-          />
-        ))}
       </MenuBar>
     </div>
   );
