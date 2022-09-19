@@ -7,17 +7,16 @@ import EditNotePane from "./Pane/Edit";
 const List = ({ notes, fetchNotes }) => {
   const [showEdit, setShowEdit] = useState(false);
   const [selectedNote, setSelectedNote] = useState({});
-
   const [showDeleteAlert, setShowDeleteAlert] = useState(false);
-  const [selectedNoteId, setSelectedNoteId] = useState([]);
+  const [selectedDeleteNote, setSelectedDeleteNote] = useState({});
 
-  const onClickEditHandler = selectedNote => {
-    setSelectedNote(selectedNote);
+  const handleEdit = note => {
+    setSelectedNote(note);
     setShowEdit(true);
   };
 
-  const onClickDeleteHandler = selectedNoteId => {
-    setSelectedNoteId([selectedNoteId]);
+  const handleDelete = note => {
+    setSelectedDeleteNote(note);
     setShowDeleteAlert(true);
   };
 
@@ -26,10 +25,10 @@ const List = ({ notes, fetchNotes }) => {
       <div className="flex w-full flex-col">
         {notes.map(note => (
           <Note
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
             key={note.id}
             note={note}
-            onClickDelete={onClickDeleteHandler}
-            onClickEdit={onClickEditHandler}
           />
         ))}
       </div>
@@ -42,8 +41,8 @@ const List = ({ notes, fetchNotes }) => {
       {showDeleteAlert && (
         <DeleteAlert
           refetch={fetchNotes}
-          selectedNoteId={selectedNoteId}
-          setSelectedNoteId={setSelectedNoteId}
+          selectedDeleteNote={selectedDeleteNote}
+          setSelectedDeleteNote={setSelectedDeleteNote}
           onClose={() => setShowDeleteAlert(false)}
         />
       )}

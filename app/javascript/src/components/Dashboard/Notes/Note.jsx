@@ -5,13 +5,9 @@ import Content from "./Note/Content";
 import Footer from "./Note/Footer";
 import Header from "./Note/Header";
 
-const Note = ({ note, onClickEdit, onClickDelete }) => (
+const Note = ({ note, handleEdit, handleDelete }) => (
   <Container key={note.id}>
-    <Header
-      note={note}
-      onClickDelete={onClickDelete}
-      onClickEdit={onClickEdit}
-    />
+    <Header handleDelete={handleDelete} handleEdit={handleEdit} note={note} />
     <Content description={note.description} />
     <Footer note={note} />
   </Container>

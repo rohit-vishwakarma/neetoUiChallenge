@@ -7,17 +7,17 @@ import notesApi from "apis/notes";
 const DeleteAlert = ({
   refetch,
   onClose,
-  selectedNoteId,
-  setSelectedNoteId,
+  selectedDeleteNote,
+  setSelectedDeleteNote,
 }) => {
   const [deleting, setDeleting] = useState(false);
 
   const handleDelete = async () => {
     try {
       setDeleting(true);
-      await notesApi.destroy({ ids: selectedNoteId });
+      await notesApi.destroy({ ids: selectedDeleteNote.id });
       onClose();
-      setSelectedNoteId([]);
+      setSelectedDeleteNote({});
       refetch();
     } catch (error) {
       logger.error(error);
@@ -29,7 +29,7 @@ const DeleteAlert = ({
     <Alert
       isOpen
       isSubmitting={deleting}
-      message="Are you sure you want to continue? This cannot be undone."
+      message={`Are you sure you want to continue to delete ${selectedDeleteNote.title}? This cannot be undone.`}
       title="Delete Note"
       onClose={onClose}
       onSubmit={handleDelete}
