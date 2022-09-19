@@ -5,8 +5,8 @@ const toCamelCase = str =>
     .toLowerCase()
     .replace(/[^a-zA-Z0-9]+(.)/g, (match, chr) => chr.toUpperCase());
 
-export const buildSelectOptions = stringArrayOptions =>
-  stringArrayOptions.map(option => ({
+export const buildSelectOptions = optionsAsStringArray =>
+  optionsAsStringArray.map(option => ({
     label: option,
     value: toCamelCase(option),
   }));
