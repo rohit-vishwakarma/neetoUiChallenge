@@ -11,6 +11,7 @@ import {
   TAGS,
   ASSIGNED_CONTACT,
 } from "../constants";
+import { convertNoteToFormFormat } from "../utils";
 
 const NoteForm = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
@@ -31,7 +32,7 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
 
   return (
     <Formik
-      initialValues={note}
+      initialValues={convertNoteToFormFormat(note)}
       validateOnBlur={submitted}
       validateOnChange={submitted}
       validationSchema={NOTES_FORM_VALIDATION_SCHEMA}
@@ -68,9 +69,9 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
               required
               className="w-full flex-grow-0"
               label="Tags"
-              name="tag"
+              name="tags"
               options={TAGS}
-              placeholder="Select Role"
+              placeholder="Select Tag"
             />
           </Pane.Body>
           <Pane.Footer>
