@@ -29,7 +29,7 @@ const DeleteAlert = ({
     <Alert
       isOpen
       isSubmitting={deleting}
-      message={`Are you sure you want to continue to delete ${selectedDeleteNote.title}? This cannot be undone.`}
+      message={`Are you sure you want to continue deleting ${selectedDeleteNote.title}? This cannot be undone.`}
       title="Delete Note"
       onClose={onClose}
       onSubmit={handleDelete}
