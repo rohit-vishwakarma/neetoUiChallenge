@@ -1,4 +1,4 @@
-import dayjs from "lib/dayjs";
+import dayjs from "dayjs";
 
 export const calculateCreatedAgo = dateTime => dayjs(dateTime).fromNow();
 
