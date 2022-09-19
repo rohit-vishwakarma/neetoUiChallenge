@@ -2,7 +2,7 @@ import React from "react";
 
 import { Table as NeetoUITable } from "neetoui";
 
-import { CONTACT_DETAILS_COLUMN_DATA } from "./ColumnData";
+import { buildContactTableColumnData } from "./utils";
 
 import { CONTACT_DETAILS_DATA } from "../constants";
 
@@ -10,7 +10,7 @@ const Table = ({ showDeleteAlert }) => (
   <div className="notes-table-height w-full">
     <NeetoUITable
       allowRowClick
-      columnData={CONTACT_DETAILS_COLUMN_DATA(showDeleteAlert)}
+      columnData={buildContactTableColumnData(showDeleteAlert)}
       rowData={CONTACT_DETAILS_DATA}
       onRowClick={() => {}}
       onRowSelect={() => {}}

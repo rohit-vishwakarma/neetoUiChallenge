@@ -3,7 +3,7 @@ import React from "react";
 import { MenuHorizontal } from "neetoicons";
 import { Avatar, Typography, Dropdown } from "neetoui";
 
-export const CONTACT_DETAILS_COLUMN_DATA = showDeleteAlert => [
+export const buildContactTableColumnData = showDeleteAlert => [
   {
     title: "Name & Role",
     dataIndex: "firstName",
