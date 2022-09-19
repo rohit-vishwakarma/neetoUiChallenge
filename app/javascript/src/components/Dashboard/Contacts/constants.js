@@ -1,3 +1,4 @@
+import { buildSelectOptions } from "utils";
 import * as yup from "yup";
 
 export const CONTACTS_FROM_INITIAL_VALUES = {
@@ -74,16 +75,7 @@ export const CONTACT_DETAILS_DATA = [
   },
 ];
 
-export const ROLES = [
-  {
-    label: "Admin",
-    value: "admin",
-  },
-  {
-    label: "Non Admin",
-    value: "non-admin",
-  },
-];
+export const ROLES = buildSelectOptions(["Admin", "Non Admin"]);
 
 export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
   firstName: yup.string().required("Title is required"),
