@@ -3,7 +3,7 @@ import * as yup from "yup";
 
 export const CONTACTS_FROM_INITIAL_VALUES = {
   firstName: "",
-  secondName: "",
+  lastName: "",
   email: "",
   role: null,
 };
@@ -78,12 +78,12 @@ export const CONTACT_DETAILS_DATA = [
 export const ROLES = buildSelectOptions(["Admin", "Non Admin"]);
 
 export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
-  firstName: yup.string().required("Title is required"),
-  lastName: yup.string().required("Description is required"),
+  firstName: yup.string().required("First name is required."),
+  lastName: yup.string().required("Last name is required."),
   email: yup
     .string()
     .required("Email address is required.")
-    .email("Invalid email address"),
+    .email("Invalid email address."),
   role: yup
     .object()
     .nullable()
