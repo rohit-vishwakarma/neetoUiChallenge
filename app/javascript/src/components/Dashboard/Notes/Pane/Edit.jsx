@@ -2,7 +2,7 @@ import React from "react";
 
 import { Pane, Typography } from "neetoui";
 
-import Form from "./Form";
+import NoteForm from "./NoteForm";
 
 const EditNotePane = ({ fetchNotes, showPane, setShowPane, note }) => {
   const onClose = () => setShowPane(false);
@@ -14,7 +14,7 @@ const EditNotePane = ({ fetchNotes, showPane, setShowPane, note }) => {
           Edit Note
         </Typography>
       </Pane.Header>
-      <Form isEdit note={note} refetch={fetchNotes} onClose={onClose} />
+      <NoteForm isEdit note={note} refetch={fetchNotes} onClose={onClose} />
     </Pane>
   );
 };
