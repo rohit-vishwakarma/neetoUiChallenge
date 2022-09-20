@@ -4,7 +4,7 @@ import { Button, Alert, Toastr, Pagination } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
 import Menu from "./Menu";
-import NewContactPane from "./Pane/NewContactPane";
+import CreatePane from "./Pane/Create";
 import Table from "./Table";
 
 const Contacts = () => {
@@ -52,7 +52,7 @@ const Contacts = () => {
           onClose={() => setShowDeleteAlert(false)}
           onSubmit={() => handleDelete()}
         />
-        <NewContactPane
+        <CreatePane
           setShowPane={setShowNewContactPane}
           showPane={showNewContactPane}
         />
