@@ -4,7 +4,7 @@ import { Button, Alert, Toastr, Pagination } from "neetoui";
 import { Container, Header } from "neetoui/layouts";
 
 import Menu from "./Menu";
-import NewContactPane from "./Pane/Create";
+import NewContactPane from "./Pane/NewContactPane";
 import Table from "./Table";
 
 const Contacts = () => {

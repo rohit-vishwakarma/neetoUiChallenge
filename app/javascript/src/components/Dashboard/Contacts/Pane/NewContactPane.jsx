@@ -2,7 +2,7 @@ import React from "react";
 
 import { Pane, Typography } from "neetoui";
 
-import Form from "./Form";
+import ContactForm from "./ContactForm";
 
 const NewContactPane = ({ showPane, setShowPane }) => {
   const onClose = () => setShowPane(false);
@@ -14,7 +14,7 @@ const NewContactPane = ({ showPane, setShowPane }) => {
           Create a New Contact
         </Typography>
       </Pane.Header>
-      <Form onClose={onClose} />
+      <ContactForm onClose={onClose} />
     </Pane>
   );
 };

@@ -9,7 +9,7 @@ import EmptyState from "components/Common/EmptyState";
 
 import List from "./List";
 import Menu from "./Menu";
-import NewNotePane from "./Pane/Create";
+import NewNotePane from "./Pane/NewNotePane";
 
 const Notes = () => {
   const [loading, setLoading] = useState(true);

@@ -2,7 +2,7 @@ import React from "react";
 
 import { Pane, Typography } from "neetoui";
 
-import Form from "./Form";
+import NoteForm from "./NoteForm";
 
 import { NOTES_FORM_INITIAL_FORM_VALUES } from "../constants";
 
@@ -16,7 +16,7 @@ const NewNotePane = ({ fetchNotes, showPane, setShowPane }) => {
           Create a New Note
         </Typography>
       </Pane.Header>
-      <Form
+      <NoteForm
         isEdit={false}
         note={NOTES_FORM_INITIAL_FORM_VALUES}
         refetch={fetchNotes}
